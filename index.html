@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mahdi Pursalim | Bioinformatics Researcher</title>
+  <meta name="description" content="Bioinformatics Researcher | Computational Biology | Single-Cell & Spatial Transcriptomics" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0f1419;
+      --bg-card: #1a2332;
+      --bg-soft: #151c27;
+      --text: #e8eef6;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.12);
+      --accent-hover: #7dd3fc;
+      --border: #2a3648;
+      --radius: 12px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 16px;
+    }
+
+    a { color: var(--accent); text-decoration: none; transition: color 0.2s ease; }
+    a:hover { color: var(--accent-hover); }
+
+    .container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+    section { padding: 4.5rem 0; }
+    section + section { border-top: 1px solid var(--border); }
+
+    h1, h2, h3 { font-weight: 600; letter-spacing: -0.02em; }
+    h2 {
+      font-size: 1.55rem;
+      margin-bottom: 1.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    h2::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 1.2em;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    /* Nav */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 20, 25, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+    }
+    .logo { font-weight: 600; font-size: 1.1rem; color: var(--text); }
+    .logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 1.75rem; list-style: none; }
+    .nav-links a { color: var(--text-muted); font-size: 0.9rem; font-weight: 500; }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* Hero */
+    .hero { padding: 5.5rem 0 4rem; text-align: center; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3rem);
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.03em;
+    }
+    .hero .title {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      font-weight: 400;
+      margin-bottom: 1.75rem;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    .btn-primary { background: var(--accent); color: #0f1419; }
+    .btn-primary:hover { background: var(--accent-hover); color: #0f1419; }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+    .contact-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .contact-pills a { color: var(--text-muted); }
+    .contact-pills a:hover { color: var(--accent); }
+
+    /* Cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: border-color 0.2s ease;
+    }
+    .card:hover { border-color: #3b4a63; }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    .skill-group h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+      color: var(--accent);
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+    .tag {
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Timeline */
+    .timeline { position: relative; padding-left: 1.5rem; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      bottom: 6px;
+      width: 2px;
+      background: var(--border);
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+      padding-left: 1.25rem;
+    }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -1.55rem;
+      top: 0.45rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--bg);
+    }
+    .timeline-item .date {
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .timeline-item h3 { font-size: 1.05rem; margin-bottom: 0.2rem; }
+    .timeline-item .place {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .timeline-item p { font-size: 0.9rem; color: var(--text-muted); }
+
+    /* Publications */
+    .pub-list { display: flex; flex-direction: column; gap: 1.25rem; }
+    .pub-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.4rem;
+    }
+    .pub-item .type {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+    }
+    .pub-item h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 0.35rem;
+      line-height: 1.45;
+    }
+    .pub-item .meta { font-size: 0.85rem; color: var(--text-muted); }
+
+    /* Awards */
+    .awards-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .award-item {
+      display: flex;
+      gap: 0.9rem;
+      align-items: flex-start;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.25rem;
+    }
+    .award-icon {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      background: var(--accent-soft);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+    .award-item h3 { font-size: 0.95rem; margin-bottom: 0.15rem; }
+    .award-item p { font-size: 0.8rem; color: var(--text-muted); }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .contact-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+      text-align: center;
+      transition: border-color 0.2s ease;
+    }
+    .contact-card:hover { border-color: var(--accent); }
+    .contact-card .icon { font-size: 1.5rem; margin-bottom: 0.6rem; }
+    .contact-card h3 {
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+      color: var(--text-muted);
+    }
+    .contact-card a { font-size: 0.95rem; word-break: break-all; }
+
+    footer {
+      padding: 2.5rem 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .about-text {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 720px;
+    }
+
+    @media (max-width: 700px) {
+      .nav-links { display: none; }
+      section { padding: 3.2rem 0; }
+      .hero { padding: 4rem 0 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container nav-inner">
+      <a href="#" class="logo">Mahdi <span>Pursalim</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="hero-badge">Bioinformatics Researcher</div>
+      <h1>Mahdi Pursalim</h1>
+      <p class="title">Computational Biology · Single-Cell & Spatial Transcriptomics · Learning-based Modelling of Cellular Dynamics</p>
+      <div class="hero-links">
+        <a href="mailto:pursalimm@outlook.com" class="btn btn-primary">Email Me</a>
+        <a href="https://github.com/pursalimm" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
+        <a href="https://www.linkedin.com/in/pursalimm" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+      </div>
+      <div class="contact-pills">
+        <span>pursalimm@outlook.com</span>
+        <span>·</span>
+        <span>pursalimm@ut.ac.ir</span>
+        <span>·</span>
+        <span>+98 936 121 1800</span>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <h2>About</h2>
+      <p class="about-text">
+        Bioinformatics researcher and computational biologist with a PhD in Bioinformatics from the University of Tehran. 
+        My research focuses on learning-based computational modelling of tumor cell migration at spatiotemporal single-cell resolution. 
+        I have broader experience in single-cell and spatial transcriptomics, computational biology, and complex biological network analysis. 
+        I combine formal training in computer science with biological data analysis and extensive experience in higher education.
+      </p>
+    </div>
+  </section>
+
+  <section id="expertise">
+    <div class="container">
+      <h2>Core Research & Technical Expertise</h2>
+      <div class="skills-grid">
+        <div class="card skill-group">
+          <h3>Research Areas</h3>
+          <div class="tags">
+            <span class="tag">Single-cell Transcriptomics</span>
+            <span class="tag">Spatial Transcriptomics</span>
+            <span class="tag">Cellular Dynamics</span>
+            <span class="tag">Systems Biology</span>
+            <span class="tag">Network Analysis</span>
+            <span class="tag">Tumor Cell Migration</span>
+          </div>
+        </div>
+        <div class="card skill-group">
+          <h3>Programming</h3>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">R</span>
+            <span class="tag">MATLAB</span>
+            <span class="tag">C++</span>
+            <span class="tag">C#</span>
+            <span class="tag">ASP.NET</span>
+          </div>
+        </div>
+        <div class="card skill-group">
+          <h3>Bioinformatics Tools</h3>
+          <div class="tags">
+            <span class="tag">Seurat</span>
+            <span class="tag">Scanpy</span>
+            <span class="tag">Cell Ranger</span>
+            <span class="tag">DESeq2</span>
+          </div>
+        </div>
+        <div class="card skill-group">
+          <h3>Other Tools</h3>
+          <div class="tags">
+            <span class="tag">SQL Server</span>
+            <span class="tag">Adobe Illustrator</span>
+            <span class="tag">Adobe Photoshop</span>
+            <span class="tag">Linux</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="container">
+      <h2>Education</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="date">2020 – 2026</div>
+          <h3>PhD in Bioinformatics</h3>
+          <div class="place">University of Tehran, Kish International Campus, Iran</div>
+          <p>
+            Thesis: <em>Learning-based Modelling of Tumor Cell Migration at Spatiotemporal Single-cell Resolution</em><br />
+            Supervisors: Dr. Kaveh Kavousi &amp; Dr. Parisa Shooshtari<br />
+            GPA: 19.25 / 20.00
+          </p>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2011 – 2014</div>
+          <h3>MSc in Computer Software Engineering</h3>
+          <div class="place">Islamic Azad University, Science and Research Branch, Iran</div>
+          <p>
+            Thesis: <em>A new approximation algorithm for detection of motifs in complex networks</em><br />
+            Supervisors: Dr. Javad Sadri &amp; Dr. Nasrin Mollania<br />
+            GPA: 17.02 / 20.00
+          </p>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2008 – 2010</div>
+          <h3>BSc in Computer Software Engineering</h3>
+          <div class="place">Islamic Azad University of Sabzevar, Iran</div>
+          <p>
+            Thesis: <em>Design and implementation of personal accounting software in C# .Net</em><br />
+            GPA: 17.38 / 20.00
+          </p>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2006 – 2008</div>
+          <h3>Associate Degree in Computer Software</h3>
+          <div class="place">Islamic Azad University of Sabzevar, Iran</div>
+          <p>GPA: 17.40 / 20.00</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <h2>Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="date">Oct 2010 – Present</div>
+          <h3>Lecturer</h3>
+          <div class="place">Ministry of Education, Iran</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">Sep 2013 – Present</div>
+          <h3>Lecturer</h3>
+          <div class="place">University of Applied Science and Technology, Iran</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2006 – 2010</div>
+          <h3>Teaching Assistant</h3>
+          <div class="place">Islamic Azad University of Sabzevar (IAUS)</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2006 – 2010</div>
+          <h3>Member, Student Scientific Association</h3>
+          <div class="place">Department of Computer Science, IAUS</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <div class="container">
+      <h2>Selected Publications</h2>
+      <div class="pub-list">
+        <div class="pub-item">
+          <div class="type">Journal Article · 2026</div>
+          <h3>Systems-level modeling of cell migration using spatially-resolved Single-Cell data</h3>
+          <div class="meta">
+            Pursalim, M., Kavousi, K. &amp; Shooshtari, P. · <em>BMC Bioinformatics</em><br />
+            <a href="https://doi.org/10.1186/s12859-026-06649-z" target="_blank" rel="noopener">doi.org/10.1186/s12859-026-06649-z</a>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="type">Journal Article · 2020</div>
+          <h3>An Efficient Multiresolution Clustering for Motif Discovery in Complex Networks</h3>
+          <div class="meta">
+            Pursalim, M. &amp; Keong, K. C. · <em>IEEE/ACM Transactions on Computational Biology and Bioinformatics</em> (vol. 19, no. 1, pp. 284–294)
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="type">Journal Article · 2016</div>
+          <h3>Application of Fractal Theory on Motifs Counting in Biological Networks</h3>
+          <div class="meta">
+            Barat Zadeh Joveini, M. &amp; Sadri, J. · <em>IEEE/ACM Transactions on Computational Biology and Bioinformatics</em> (vol. 15, no. 2, pp. 613–623)
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="type">Conference · 2023</div>
+          <h3>Cell Spatial Distribution Patterns of Human Distal Lung</h3>
+          <div class="meta">
+            Pursalim, M., Kavousi, K. · The 2nd International &amp; 11th Iranian Conference on Bioinformatics (ICB11-2023), Tehran
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="type">Conference · 2018</div>
+          <h3>Fractal Modelling of Big Data Networks</h3>
+          <div class="meta">
+            Barat Zadeh Joveini, M., Sadri, J. &amp; Alavi Khoushhal, H. · International Conference on Pattern Recognition and Artificial Intelligence (ICPRAI 2018), Montréal, Canada
+          </div>
+        </div>
+      </div>
+      <p style="margin-top: 1.25rem; font-size: 0.85rem; color: var(--text-muted);">
+        * Some earlier publications were published under the previous name: Mahdi Barat Zadeh Joveini.
+      </p>
+    </div>
+  </section>
+
+  <section id="honours">
+    <div class="container">
+      <h2>Honours &amp; Awards</h2>
+      <div class="awards-list">
+        <div class="award-item">
+          <div class="award-icon">★</div>
+          <div>
+            <h3>Distinguished PhD Student</h3>
+            <p>University of Tehran, Kish International Campus · 2020</p>
+          </div>
+        </div>
+        <div class="award-item">
+          <div class="award-icon">★</div>
+          <div>
+            <h3>SINGA Award</h3>
+            <p>Singapore International Graduate Award · 2016</p>
+          </div>
+        </div>
+        <div class="award-item">
+          <div class="award-icon">★</div>
+          <div>
+            <h3>Distinguished Lecturer</h3>
+            <p>Ministry of Education, Joghatay · 2016</p>
+          </div>
+        </div>
+        <div class="award-item">
+          <div class="award-icon">★</div>
+          <div>
+            <h3>Top BSc Student</h3>
+            <p>Islamic Azad University of Sabzevar · 2010</p>
+          </div>
+        </div>
+        <div class="award-item">
+          <div class="award-icon">★</div>
+          <div>
+            <h3>Top Associate Student</h3>
+            <p>Islamic Azad University of Sabzevar · 2007</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Get in Touch</h2>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="icon">✉</div>
+          <h3>Email</h3>
+          <a href="mailto:pursalimm@outlook.com">pursalimm@outlook.com</a><br />
+          <a href="mailto:pursalimm@ut.ac.ir">pursalimm@ut.ac.ir</a>
+        </div>
+        <div class="contact-card">
+          <div class="icon">⌘</div>
+          <h3>GitHub</h3>
+          <a href="https://github.com/pursalimm" target="_blank" rel="noopener">github.com/pursalimm</a>
+        </div>
+        <div class="contact-card">
+          <div class="icon">in</div>
+          <h3>LinkedIn</h3>
+          <a href="https://www.linkedin.com/in/pursalimm" target="_blank" rel="noopener">linkedin.com/in/pursalimm</a>
+        </div>
+        <div class="contact-card">
+          <div class="icon">☎</div>
+          <h3>Phone</h3>
+          <a href="tel:+989361211800">+98 936 121 1800</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Mahdi Pursalim · Bioinformatics Researcher</p>
+    </div>
+  </footer>
+
+</body>
+</html>
